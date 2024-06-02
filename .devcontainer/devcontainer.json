@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+    "name": "PySpark",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile"
+    },
+    "workspaceFolder": "/app",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+    ],
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "jupyter.notebookFileRoot": "/app/src"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+    ],
+    "forwardPorts": [
+        8888,
+        4040
+    ],
+    "postCreateCommand": "echo 'Container is ready!'",
+    "remoteUser": "appuser"
+}
