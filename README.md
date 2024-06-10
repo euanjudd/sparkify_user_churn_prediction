@@ -40,12 +40,12 @@ The final model was trained on the full training dataset. The performance metric
 | Recall     | 0.9773  |
 
 Confusion Matrix
-+-----+---+---+
-|churn|0.0|1.0|
-+-----+---+---+
-|    0|336|  3| 
-|    1|  5|  9|
-+-----+---+---+
+
+|       | Predicted Non-Churn | Predicted Churn |
+|-------|---------------------|-----------------|
+| **Actual Non-Churn** | 336               | 3               |
+| **Actual Churn**     | 5                 | 9               |
+
 
 ### Feature Importances
 

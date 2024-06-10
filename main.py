@@ -494,11 +494,6 @@ bl_f1 = bl_f1_evaluator.evaluate(baseline_predictions)
 print(f"Baseline Model AUC: {bl_auc}")
 print(f"Baseline Model F1 Score: {bl_f1}")
 
-"""
-Baseline Model AUC: 0.5
-Baseline Model F1 Score: 0.9502824858757061
-"""
-
 ####################################################################
 # Model Selection
 ####################################################################
@@ -525,14 +520,6 @@ for model_name, metrics in results.items():
     print(f"Results for {model_name}:")
     for metric_name, value in metrics.items():
         print(f"  {metric_name}: {value}")
-
-"""
-| Model                    | Average AUC        | Average F1 Score   |
-|--------------------------|--------------------|--------------------|
-| Logistic Regression      | 0.8569 ± 0.1248    | 0.9867 ± 0.0015    |
-| Random Forest Classifier | 0.6926 ± 0.1128    | 0.9598 ± 0.0078    |
-| Gradient Boosted Trees   | 0.5448 ± 0.1354    | 0.9661 ± 0.0088    |
-"""
 
 ####################################################################
 # Hyperparameter tuning
@@ -566,10 +553,6 @@ for params in parameter_grid:
 print("Best Model Parameters:", best_model_metrics["Best Params"])
 print("Best Model Average AUC:", best_model_metrics["Average AUC"])
 print("Best Model Average F1 Score:", best_model_metrics["Average F1 Score"])
-
-"""
-Default hyperparameters (regParam, elasticNetParam, maxIter)=(0.0, 0.0, 100) performed the best.
-"""
 
 ####################################################################
 # Train Final Model
